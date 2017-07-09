@@ -14,6 +14,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     //MARK: IBOutlets
     @IBOutlet weak var celsiusLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet var backgroundView: UIView!
     
     //MARK:- properties
     //MARK: let
@@ -59,9 +60,28 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     //MARK:- methods
     //MARK: UIViewController
     override func viewDidLoad() {
+        
+        // super.viewDidLoad은 반드시 호출해준다
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
+        print("ConversionViewController loaded its view")
         textField.delegate = self
+    }
+    
+    // 은메달 과제 : 다크 모드
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        
+        if hour < 6 || 18 < hour {
+            backgroundView.backgroundColor = UIColor.darkGray
+        } else {
+            backgroundView.backgroundColor = UIColor.lightGray
+        }
     }
 
     override func didReceiveMemoryWarning() {
