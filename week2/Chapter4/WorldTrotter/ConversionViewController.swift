@@ -50,9 +50,9 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     @IBAction func fahrenheitFieldEditingChanged(_ textfield: UITextField) {
         
         if let text = textfield.text, let value = Double(text) {
-            celsiusLabel.text = "\(value)";
+            fahrenheitValue = value;
         } else {
-            celsiusLabel.text = "???";
+            fahrenheitValue = nil
         }
     }
     
@@ -72,10 +72,22 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     //MARK:- delegate methods
     //MARK: UITextFieldDelegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("Current text: \(String(describing: textField.text))")
-        print("Replacement text: \(string)")
+        let isTextHasDecimalSeparator = textField.text?.range(of: ".")
+        let isReplacementTextHasDecimalSeparator = string.range(of: ".")
+        let digits = CharacterSet.decimalDigits
+
+        // 동메달 과제 : 알파벳 문자 허용하지 않기
+        for u in string.unicodeScalars {
+            if !digits.contains(u) && u != "." {
+                return false
+            }
+        }
         
-        return true
+        if let _ = isTextHasDecimalSeparator, let _ = isReplacementTextHasDecimalSeparator {
+            return false
+        } else {
+            return true
+        }
     }
     
     //MARK:- private methods
