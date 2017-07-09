@@ -177,3 +177,44 @@ let rawValue = MyType.B.rawValue
 if let myType = MyType(rawValue: rawValue) {
     print("정상 rawValue \(myType)")
 }
+
+
+var string: String? = "a"
+if let text = string, !text.isEmpty {
+    print(text)
+}
+
+var doubleStr: String? = "0.1"
+if let text = doubleStr, let value = Double(text) {
+    print(value)
+} else {
+    print("???")
+}
+
+/// @IBOutlet var celsiusLabel: UILabel!
+
+var fahrenheitValue: Double?
+
+var celsiusValue: Double? {
+    if let value = fahrenheitValue {
+        return (value - 32) * (5 / 9)
+    } else {
+        return nil
+    }
+}
+
+func updateCelsiusLabel() -> Double? {
+    if let value = fahrenheitValue {
+        return (value - 32) * (5 / 9)
+    } else {
+        return nil
+    }
+}
+
+var nf = NumberFormatter()
+nf.numberStyle = .decimal
+nf.minimumFractionDigits = 0
+nf.maximumFractionDigits = 1
+nf.string(from: 1.23)
+
+nf.string(from: 1)
