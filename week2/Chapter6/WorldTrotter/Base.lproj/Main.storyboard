@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -90,7 +91,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-359" y="699"/>
+            <point key="canvasLocation" x="-974" y="1155"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XNb-Ep-Bab">
@@ -104,21 +105,36 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="5wP-27-WSY"/>
                         <segue destination="ytW-PV-SHK" kind="relationship" relationship="viewControllers" id="YIe-3P-Dxj"/>
+                        <segue destination="ImG-Ou-vbX" kind="relationship" relationship="viewControllers" id="6je-Av-bdJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRq-YD-qx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1298" y="1017"/>
+            <point key="canvasLocation" x="-145" y="362"/>
         </scene>
         <!--MapKitViewController-->
         <scene sceneID="Mq3-gH-9Sa">
             <objects>
                 <viewController title="MapKitViewController" id="ytW-PV-SHK" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="pzd-QF-pfp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="RaL-rl-cqO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDU-UV-wlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-359" y="1388"/>
+            <point key="canvasLocation" x="-146" y="1155"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="dcg-Sh-MGq">
+            <objects>
+                <viewController id="ImG-Ou-vbX" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="rpk-me-twl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ueV-4J-7wZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="1155"/>
         </scene>
     </scenes>
     <resources>
