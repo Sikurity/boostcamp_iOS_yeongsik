@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController {
     
     var mapView: MKMapView!
     var locationManager = CLLocationManager()       /// 위치 관리자
@@ -28,7 +28,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
         // 지도 뷰 생성
         mapView = MKMapView()
-        mapView.delegate = self
         mapView.showsUserLocation = true
         
         // 지도 뷰를 뷰 컨트롤러의 view로 설정

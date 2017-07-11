@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController, UITextFieldDelegate {
+class ConversionViewController: UIViewController {
     
     //MARK:- properties
     //MARK: IBOutlets
@@ -69,13 +69,27 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK:- private methods
+    //MARK: custom
+    private func updateCelsiusLabel() {
+        
+        if let value = celsiusValue {
+            celsiusLabel.text = "\(value)";
+        } else {
+            celsiusLabel.text = "???";
+        }
+    }
+}
+
+extension ConversionViewController: UITextFieldDelegate {
+    
     //MARK:- delegate methods
     //MARK: UITextFieldDelegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let isTextHasDecimalSeparator = textField.text?.range(of: ".")
         let isReplacementTextHasDecimalSeparator = string.range(of: ".")
         let digits = CharacterSet.decimalDigits
-
+        
         // 동메달 과제 : 알파벳 문자 허용하지 않기
         for u in string.unicodeScalars {
             if !digits.contains(u) && u != "." {
@@ -87,17 +101,6 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             return false
         } else {
             return true
-        }
-    }
-    
-    //MARK:- private methods
-    //MARK: custom
-    private func updateCelsiusLabel() {
-        
-        if let value = celsiusValue {
-            celsiusLabel.text = "\(value)";
-        } else {
-            celsiusLabel.text = "???";
         }
     }
 }
