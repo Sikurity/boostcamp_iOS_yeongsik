@@ -50,7 +50,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u40-tK-UQ4"/>
+                                    <action selector="didTabSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhz-C5-XkB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMK-Z6-qIZ">
@@ -63,7 +63,7 @@
                                     <color key="titleColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eGw-vU-dyS"/>
+                                    <action selector="didTabSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e9K-GV-D3T"/>
                                     <segue destination="ecj-VN-asm" kind="presentation" id="tna-p5-Bsj"/>
                                 </connections>
                             </button>
@@ -100,7 +100,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="XN9-0g-whc">
                     <connections>
-                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="b1w-ga-cJI"/>
+                        <action selector="didTabViewForDismissKeyboard:" destination="BYZ-38-t0r" id="xaU-Ua-sW2"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -168,7 +168,7 @@
                                         <rect key="frame" x="171.5" y="0.0" width="171.5" height="30"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <action selector="signUpWithChekingPassword:" destination="ecj-VN-asm" eventType="touchUpInside" id="12a-z1-hNE"/>
+                                            <action selector="didTabSignUp:" destination="ecj-VN-asm" eventType="touchUpInside" id="N6Y-c1-me0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -215,12 +215,12 @@
                 <exit id="4Y0-Rt-vMn" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="h4k-S2-MJP" userLabel="ImageViewTapGestureRecognizer">
                     <connections>
-                        <action selector="chooseProfileImage:" destination="ecj-VN-asm" id="5gZ-oE-WyL"/>
+                        <action selector="didTabProfileImageView:" destination="ecj-VN-asm" id="tOM-Ep-oFh"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="x1a-xH-eaU" userLabel="ViewTapGestureRecognizer">
                     <connections>
-                        <action selector="dismissKeyboard:" destination="ecj-VN-asm" id="7il-o8-1WN"/>
+                        <action selector="didTabViewForDismissKeyboard:" destination="ecj-VN-asm" id="amg-Aj-MTd"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

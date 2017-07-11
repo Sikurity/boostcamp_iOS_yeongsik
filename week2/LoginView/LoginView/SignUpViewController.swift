@@ -35,23 +35,28 @@ class SignUpViewController: UIViewController {
     //MARK:- methods
     //MARK: IBActions
 
-    @IBAction func signUpWithChekingPassword(_ sender: Any) {
-        if let pwd = passwordTextField.text, let confirmPwd = confirmPwdTextField.text, !pwd.isEmpty, !confirmPwd.isEmpty, pwd == confirmPwd {
+    /// Click "Sign Up" button for registering
+    @IBAction func didTabSignUp(_ sender: Any) {
+        
+        if vaildatePassword(passwordTextField.text, confirmPwdTextField.text) {
             self.dismiss(animated: true, completion: nil)
         } else {
-            print("비밀번호를 다시 확인해주세요")
+            print("비밀번호를 확인해주세요")
         }
     }
     
-    @IBAction func dismissKeyboard(_ sender: Any) {
+    /// Dissmiss keyboard by clicking blank view of outside
+    @IBAction func didTabViewForDismissKeyboard(_ sender: Any) {
         print("dismissKeyBoard")
         
         self.view.endEditing(true)
     }
     
-    @IBAction func chooseProfileImage(_ sender: Any) {
+    /// Click profile image view for selecting or changing profile image
+    /// by using photo library
+    @IBAction func didTabProfileImageView(_ sender: Any) {
         
-        print("chooseProfileImage")
+        print("didTabProfileImageView")
         
         let imagePicker = UIImagePickerController()
         
@@ -61,12 +66,23 @@ class SignUpViewController: UIViewController {
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-    // MARK: - Navigation
+    // MARK: - methods
+    // MARK: - private
+
+    /// Confirm password, they are same and not empty
+    private func vaildatePassword(_ password: String?, _ confirmPwd: String?) -> Bool {
+        
+        if let pwd = password, let confirmPwd = confirmPwd, !pwd.isEmpty, !confirmPwd.isEmpty, pwd == confirmPwd {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate
 {
-    /// Return 키를 누를 경우 키보드 내리기
+    /// Dismiss keyboard if "Return" clicked
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         

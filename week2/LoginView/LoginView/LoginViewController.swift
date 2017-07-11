@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
     //MARK:- methods
     //MARK: IBActions
     
-    /// Sign In 선택
-    @IBAction func signIn(_ sender: Any) {
+    /// Click "Sign In" button to login
+    @IBAction func didTabSignIn(_ sender: Any) {
         
         print("touch up inside - sign in")
         
@@ -39,20 +39,20 @@ class LoginViewController: UIViewController {
         print("ID : \(id), PW : \(pwd)")
     }
     
-    /// Sign Up 선택
-    @IBAction func signUp(_ sender: Any) {
+    /// Click "Sign Up" button to sign up
+    @IBAction func didTabSignUp(_ sender: Any) {
         
         print("touch up inside - sign up")
     }
     
-    /// 활성화 된 키보드 없애기
-    @IBAction func dismissKeyboard(_ sender: Any) {
+    /// Dissmiss keyboard by clicking blank view of outside
+    @IBAction func didTabViewForDismissKeyboard(_ sender: Any) {
         
         self.view.endEditing(true)
     }
     
     // MARK: - Navigation
-    /// (뒤로가기) 회원가입 뷰 -> 로그인 뷰
+    
     @IBAction func prepareForUnwindFromSignUpView(segue: UIStoryboardSegue){
         
     }
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate
 {
-    /// Return 키를 누를 경우 키보드 내리기
+    /// Dismiss keyboard if "Return" clicked
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
