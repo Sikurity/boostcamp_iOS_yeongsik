@@ -35,7 +35,7 @@ class SignUpViewController: UIViewController {
     //MARK:- methods
     //MARK: IBActions
 
-    /// Click "Sign Up" button for registering
+    /// Run when user click "Sign Up" button to register
     @IBAction func didTabSignUp(_ sender: Any) {
         
         if vaildatePassword(passwordTextField.text, confirmPwdTextField.text) {
