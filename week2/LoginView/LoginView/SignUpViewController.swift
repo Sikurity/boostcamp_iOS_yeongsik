@@ -62,6 +62,7 @@ class SignUpViewController: UIViewController {
         
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
+        imagePicker.allowsEditing = true    // 사진 앱에서, 이미지를 선택한 후 확대/축소 편집이 가능하도록
         
         self.present(imagePicker, animated: true, completion: nil)
     }
@@ -94,7 +95,7 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             profileImageView.image = image
         }
         

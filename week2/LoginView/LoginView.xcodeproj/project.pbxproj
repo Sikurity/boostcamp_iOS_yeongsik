@@ -13,8 +13,19 @@
 		049B5C461F09362A000AFCD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049B5C441F09362A000AFCD4 /* Main.storyboard */; };
 		049B5C481F09362A000AFCD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049B5C471F09362A000AFCD4 /* Assets.xcassets */; };
 		049B5C4B1F09362A000AFCD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049B5C491F09362A000AFCD4 /* LaunchScreen.storyboard */; };
+		04DCA70E1F160B7B008C62C6 /* LoginViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DCA70D1F160B7B008C62C6 /* LoginViewUITests.swift */; };
 		04DE7FD41F09382E0036855C /* yagom_symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DE7FD31F09382E0036855C /* yagom_symbol.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04DCA7101F160B7B008C62C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 049B5C351F09362A000AFCD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 049B5C3C1F09362A000AFCD4;
+			remoteInfo = LoginView;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		044B0EE11F136BAC00325A94 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -25,11 +36,21 @@
 		049B5C471F09362A000AFCD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049B5C4A1F09362A000AFCD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049B5C4C1F09362A000AFCD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DCA70B1F160B7B008C62C6 /* LoginViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DCA70D1F160B7B008C62C6 /* LoginViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewUITests.swift; sourceTree = "<group>"; };
+		04DCA70F1F160B7B008C62C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DE7FD31F09382E0036855C /* yagom_symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yagom_symbol.png; path = resources/imgs/yagom_symbol.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		049B5C3A1F09362A000AFCD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DCA7081F160B7B008C62C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				049B5C3F1F09362A000AFCD4 /* LoginView */,
+				04DCA70C1F160B7B008C62C6 /* LoginViewUITests */,
 				049B5C3E1F09362A000AFCD4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				049B5C3D1F09362A000AFCD4 /* LoginView.app */,
+				04DCA70B1F160B7B008C62C6 /* LoginViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +91,15 @@
 				04DE7FD31F09382E0036855C /* yagom_symbol.png */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		04DCA70C1F160B7B008C62C6 /* LoginViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04DCA70D1F160B7B008C62C6 /* LoginViewUITests.swift */,
+				04DCA70F1F160B7B008C62C6 /* Info.plist */,
+			);
+			path = LoginViewUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +122,24 @@
 			productReference = 049B5C3D1F09362A000AFCD4 /* LoginView.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04DCA70A1F160B7B008C62C6 /* LoginViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DCA7141F160B7B008C62C6 /* Build configuration list for PBXNativeTarget "LoginViewUITests" */;
+			buildPhases = (
+				04DCA7071F160B7B008C62C6 /* Sources */,
+				04DCA7081F160B7B008C62C6 /* Frameworks */,
+				04DCA7091F160B7B008C62C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04DCA7111F160B7B008C62C6 /* PBXTargetDependency */,
+			);
+			name = LoginViewUITests;
+			productName = LoginViewUITests;
+			productReference = 04DCA70B1F160B7B008C62C6 /* LoginViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -104,6 +154,12 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = NJRMGGTV4H;
 						ProvisioningStyle = Automatic;
+					};
+					04DCA70A1F160B7B008C62C6 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LGYQPRQ6SD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 049B5C3C1F09362A000AFCD4;
 					};
 				};
 			};
@@ -121,6 +177,7 @@
 			projectRoot = "";
 			targets = (
 				049B5C3C1F09362A000AFCD4 /* LoginView */,
+				04DCA70A1F160B7B008C62C6 /* LoginViewUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +194,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04DCA7091F160B7B008C62C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -150,7 +214,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04DCA7071F160B7B008C62C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DCA70E1F160B7B008C62C6 /* LoginViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04DCA7111F160B7B008C62C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 049B5C3C1F09362A000AFCD4 /* LoginView */;
+			targetProxy = 04DCA7101F160B7B008C62C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		049B5C441F09362A000AFCD4 /* Main.storyboard */ = {
@@ -293,6 +373,32 @@
 			};
 			name = Release;
 		};
+		04DCA7121F160B7B008C62C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = LGYQPRQ6SD;
+				INFOPLIST_FILE = LoginViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.or.connect.boostcamp.LoginViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = LoginView;
+			};
+			name = Debug;
+		};
+		04DCA7131F160B7B008C62C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = LGYQPRQ6SD;
+				INFOPLIST_FILE = LoginViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.or.connect.boostcamp.LoginViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = LoginView;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -313,6 +419,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		04DCA7141F160B7B008C62C6 /* Build configuration list for PBXNativeTarget "LoginViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DCA7121F160B7B008C62C6 /* Debug */,
+				04DCA7131F160B7B008C62C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
