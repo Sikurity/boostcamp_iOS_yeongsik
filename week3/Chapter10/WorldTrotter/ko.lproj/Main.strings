@@ -1,0 +1,24 @@
+
+/* Class = "UITextField"; placeholder = "value"; ObjectID = "1jv-8S-GND"; */
+"1jv-8S-GND.placeholder" = "값";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "Ezi-l5-TGd"; */
+"Ezi-l5-TGd.title" = "변환";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "RaL-rl-cqO"; */
+"RaL-rl-cqO.title" = "지도";
+
+/* Class = "UILabel"; text = "degrees Celsius"; ObjectID = "ZLB-6O-LGp"; */
+"ZLB-6O-LGp.text" = "섭씨";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "nTu-Xa-Ypr"; */
+"nTu-Xa-Ypr.text" = "100";
+
+/* Class = "UILabel"; text = "degrees Fahrenheit"; ObjectID = "sMB-ev-tYs"; */
+"sMB-ev-tYs.text" = "화씨";
+
+/* Class = "UILabel"; text = "is really"; ObjectID = "xh5-s5-49q"; */
+"xh5-s5-49q.text" = "실제로";
+
+/* Class = "UIViewController"; title = "Map"; ObjectID = "ytW-PV-SHK"; */
+"ytW-PV-SHK.title" = "지도";
