@@ -80,7 +80,7 @@ class ItemsViewController: UITableViewController {
             cell.detailTextLabel?.font = font
         }
         
-        
+        cell.backgroundColor = UIColor(colorLiteralRed: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         
