@@ -47,8 +47,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /// 다음 질문 버튼을 누르면 현재 질문을 오른쪽으로 날려보내고
-    /// 다음 질문을 애니메이션을 적용해 왼쪽에서 끌어와 다음 질문으로 변경
+    /// 현재 질문을 오른쪽으로 날려보내고 다음 질문을 왼쪽에서 끌어와 다음 질문을 보여줌
     func animateQuestionLabelTransitions() {
         
         // Change alpha value
@@ -95,12 +94,10 @@ class ViewController: UIViewController {
                     self.answerLabel.alpha = 0.2
                 }
                 
-                print("hi2")
                 guard self.currentQuestionIndex < self.QnAs.count else {
                     self.answerLabel.text = "???"
                     return
                 }
-                print("hi3")
                 
                 let answer = self.QnAs[self.currentQuestionIndex].answer
                 self.answerLabel.text = answer
@@ -118,6 +115,7 @@ class ViewController: UIViewController {
         nextQuestionLabelCenterXConstraint.constant = -screenWidth
     }
     
+    /// 다음 질문을 보여준다
     @IBAction func showNextQuestion(_ sender: Any) {
         
         currentQuestionIndex += 1
@@ -135,8 +133,9 @@ class ViewController: UIViewController {
         animateQuestionLabelTransitions()
     }
     
+    /// 현재 질문의 답을 보여준다
     @IBAction func showAnswerOfCurrentQuestion(_ sender: Any) {
-        print("hi1")
+
         animateAnswerLabelTransitions()
     }
 }
