@@ -13,10 +13,10 @@ class SignInCustomUIView: CustomUIView {
     override func setup() {
         super.setup()
         
-        self.setTitle(title: "Sign In", for: .normal)
-        self.setTitleColor(color: UIColor.white, for: .normal)
-        self.backgroundColor = UIColor.green
-        // self.backgroundImage = UIImage(named: "signin")
+        //self.setTitle(title: "Sign In", for: .normal)
+        //self.setTitleColor(color: UIColor.white, for: .normal)
+        //self.backgroundColor = UIColor.green
+        self.backgroundImage = UIImage(named: "signin")
     }
 
 }

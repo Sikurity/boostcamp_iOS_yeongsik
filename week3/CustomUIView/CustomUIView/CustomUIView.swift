@@ -74,7 +74,7 @@ class CustomUIView: UIView {
         }
     }
     
-    private var eventControls: [UIControlEvents.RawValue:[(UIResponder, Selector)]] = [:]
+    private var eventControls: [UIControlEvents:[(UIResponder, Selector)]] = [:]
     
     // UIButton의 addTarget을 모방
     func addTarget(_ target: Any?, action: Selector, for event: UIControlEvents) {
@@ -84,10 +84,10 @@ class CustomUIView: UIView {
             return
         }
         
-        if eventControls[event.rawValue] != nil {
-            eventControls[event.rawValue]! += [(respondableTarget, action)]
+        if eventControls[event] != nil {
+            eventControls[event]! += [(respondableTarget, action)]
         } else {
-            eventControls[event.rawValue] = [(respondableTarget, action)]
+            eventControls[event] = [(respondableTarget, action)]
         }
     }
     
@@ -98,18 +98,18 @@ class CustomUIView: UIView {
         }
         
         /// 이벤트에 등록된 (target, action)이 일치하는 컨트롤의 위치를 찾아 삭제
-        if let idx = eventControls[event.rawValue]?.index(where: {$0 == respondableTarget && $1 == action}) {
-            eventControls[event.rawValue]?.remove(at: idx)
+        if let idx = eventControls[event]?.index(where: {$0 == respondableTarget && $1 == action}) {
+            eventControls[event]?.remove(at: idx)
         }
     }
     
     /// UIControl의 sendActions를 구현
     func sendActions(for event: UIControlEvents) {
-        guard eventControls[event.rawValue] != nil else {
+        guard eventControls[event] != nil else {
             return
         }
         
-        for (respondableTarget, selector) in eventControls[event.rawValue]! {
+        for (respondableTarget, selector) in eventControls[event]! {
             if let controllableTarget = respondableTarget as? UIControl {    // target이 자신이 아니라면, target에 sendAction
                 controllableTarget.sendActions(for: event)
             } else if respondableTarget.canPerformAction(selector, withSender: nil) {
@@ -201,5 +201,15 @@ class CustomUIView: UIView {
     /// Touch Down 테스트 함수
     func didTouchUpOutside() {
         print("didTouchUpOutside")
+    }
+}
+
+extension UIControlEvents : Hashable {
+    public var hashValue: Int {
+        return Int(self.rawValue)
+    }
+    
+    public static func ==(lhs: UIControlEvents, rhs: UIControlEvents) -> Bool {
+        return lhs == rhs
     }
 }

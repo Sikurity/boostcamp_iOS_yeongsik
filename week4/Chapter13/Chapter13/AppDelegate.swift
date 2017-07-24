@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CustomUIView
+//  Chapter13
 //
-//  Created by YeongsikLee on 2017. 7. 17..
+//  Created by YeongsikLee on 2017. 7. 24..
 //  Copyright © 2017년 boostcamp. All rights reserved.
 //
 
@@ -15,10 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        print(UIControlEvents.touchDown)
-        print([UIControlEvents.touchDown, UIControlEvents.touchUpInside][0])
         // Override point for customization after application launch.
+        
+        let itemStore = ItemStore()
+        
+        let navController = window!.rootViewController as! UINavigationController
+        let itemsController = navController.topViewController as! ItemsViewController
+        
+        itemsController.itemStore = itemStore
+        
         return true
     }
 
