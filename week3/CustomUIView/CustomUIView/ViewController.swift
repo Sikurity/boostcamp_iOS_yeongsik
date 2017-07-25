@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var customButton: CustomUIView!
-    @IBOutlet var toggleButton: UIButton!
+    @IBOutlet weak var customButton: CustomUIView!
+    @IBOutlet weak var toggleButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
