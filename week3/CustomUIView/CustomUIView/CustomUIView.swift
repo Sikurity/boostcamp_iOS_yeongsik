@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NotificationCenter
 
 class CustomUIView: UIView {
     
