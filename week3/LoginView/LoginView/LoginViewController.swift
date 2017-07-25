@@ -12,12 +12,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwdTextField: UITextField!
     
+    @IBOutlet var recognizer: UITapGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         idTextField.delegate = self
         pwdTextField.delegate = self
+        
+        // true -> TabGestureRecognizer가 커스텀 버튼의 touchesEnded 실행을 막음
+        recognizer.cancelsTouchesInView = false
     }
     
     override func didReceiveMemoryWarning() {

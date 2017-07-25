@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CustomUIView
+//  Chapter8
 //
-//  Created by YeongsikLee on 2017. 7. 17..
+//  Created by YeongsikLee on 2017. 7. 21..
 //  Copyright © 2017년 boostcamp. All rights reserved.
 //
 
@@ -15,9 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        print(UIControlEvents.touchDown)
-        print([UIControlEvents.touchDown, UIControlEvents.touchUpInside][0])
         // Override point for customization after application launch.
         return true
     }

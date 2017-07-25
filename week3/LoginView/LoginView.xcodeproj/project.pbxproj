@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042FB20A1F1DE542001FBE1F /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FB2091F1DE542001FBE1F /* CustomUIView.swift */; };
+		042FB20C1F1DE66E001FBE1F /* SignInCustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FB20B1F1DE66E001FBE1F /* SignInCustomUIView.swift */; };
+		042FB20E1F1DE67C001FBE1F /* SignUpUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FB20D1F1DE67C001FBE1F /* SignUpUIView.swift */; };
+		042FB2111F1DEBBB001FBE1F /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FB20F1F1DEBBB001FBE1F /* signin.png */; };
+		042FB2121F1DEBBB001FBE1F /* signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 042FB2101F1DEBBB001FBE1F /* signup.png */; };
 		044B0EE21F136BAC00325A94 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B0EE11F136BAC00325A94 /* SignUpViewController.swift */; };
 		049B5C411F09362A000AFCD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B5C401F09362A000AFCD4 /* AppDelegate.swift */; };
 		049B5C431F09362A000AFCD4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B5C421F09362A000AFCD4 /* LoginViewController.swift */; };
@@ -28,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042FB2091F1DE542001FBE1F /* CustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
+		042FB20B1F1DE66E001FBE1F /* SignInCustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInCustomUIView.swift; sourceTree = "<group>"; };
+		042FB20D1F1DE67C001FBE1F /* SignUpUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUIView.swift; sourceTree = "<group>"; };
+		042FB20F1F1DEBBB001FBE1F /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signin.png; path = resources/imgs/signin.png; sourceTree = "<group>"; };
+		042FB2101F1DEBBB001FBE1F /* signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signup.png; path = resources/imgs/signup.png; sourceTree = "<group>"; };
 		044B0EE11F136BAC00325A94 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		049B5C3D1F09362A000AFCD4 /* LoginView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049B5C401F09362A000AFCD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,11 +94,16 @@
 				049B5C401F09362A000AFCD4 /* AppDelegate.swift */,
 				049B5C421F09362A000AFCD4 /* LoginViewController.swift */,
 				044B0EE11F136BAC00325A94 /* SignUpViewController.swift */,
+				042FB2091F1DE542001FBE1F /* CustomUIView.swift */,
 				049B5C471F09362A000AFCD4 /* Assets.xcassets */,
 				049B5C441F09362A000AFCD4 /* Main.storyboard */,
 				049B5C491F09362A000AFCD4 /* LaunchScreen.storyboard */,
 				049B5C4C1F09362A000AFCD4 /* Info.plist */,
 				04DE7FD31F09382E0036855C /* yagom_symbol.png */,
+				042FB20F1F1DEBBB001FBE1F /* signin.png */,
+				042FB2101F1DEBBB001FBE1F /* signup.png */,
+				042FB20B1F1DE66E001FBE1F /* SignInCustomUIView.swift */,
+				042FB20D1F1DE67C001FBE1F /* SignUpUIView.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -191,6 +206,8 @@
 				04DE7FD41F09382E0036855C /* yagom_symbol.png in Resources */,
 				049B5C481F09362A000AFCD4 /* Assets.xcassets in Resources */,
 				049B5C461F09362A000AFCD4 /* Main.storyboard in Resources */,
+				042FB2111F1DEBBB001FBE1F /* signin.png in Resources */,
+				042FB2121F1DEBBB001FBE1F /* signup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				044B0EE21F136BAC00325A94 /* SignUpViewController.swift in Sources */,
+				042FB20C1F1DE66E001FBE1F /* SignInCustomUIView.swift in Sources */,
+				042FB20A1F1DE542001FBE1F /* CustomUIView.swift in Sources */,
 				049B5C431F09362A000AFCD4 /* LoginViewController.swift in Sources */,
+				042FB20E1F1DE67C001FBE1F /* SignUpUIView.swift in Sources */,
 				049B5C411F09362A000AFCD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +447,7 @@
 				04DCA7131F160B7B008C62C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
