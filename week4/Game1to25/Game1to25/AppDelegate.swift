@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         load()
         
+        print(history)
+        
         return true
     }
 

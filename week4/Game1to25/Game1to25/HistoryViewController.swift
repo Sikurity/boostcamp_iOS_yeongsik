@@ -11,17 +11,23 @@ import UIKit
 class HistoryViewController: UIViewController {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var dateFormatter: DateFormatter = {
+     
+        let _dateFormatter = DateFormatter()
+        
+        _dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
+        
+        return _dateFormatter
+    }()
     
     @IBOutlet var historyTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        historyTable.delegate = self
+        historyTable.dataSource = self
+        historyTable.allowsMultipleSelectionDuringEditing = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,14 +84,14 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath) as! RecordTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath)
         
         let playtime = self.appDelegate.history[indexPath.row].playtime
         let name = self.appDelegate.history[indexPath.row].name
-        let date = DateFormatter().string(from: self.appDelegate.history[indexPath.row].date)
+        let date = dateFormatter.string(from: self.appDelegate.history[indexPath.row].date)
         
-        cell.playTimeLabel.text = playtime
-        cell.userInfoLabel.text = "\(name) (\(date))"
+        cell.textLabel?.text = "\(name) (\(date))"
+        cell.detailTextLabel?.text = playtime
      
         return cell
     }
@@ -94,7 +100,11 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
         if editingStyle == .delete {    // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            self.appDelegate.history.remove(at: indexPath.row)
+            self.appDelegate.save()
+            
+            self.historyTable.reloadData()
         }
     }
 }

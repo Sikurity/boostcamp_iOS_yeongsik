@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    /// GameTitle Animation
     func animateGameTitle() {
         
         UIView.animate (
@@ -51,6 +52,7 @@ class MainViewController: UIViewController {
 
 extension UIViewController {
     
+    /// modal 
     var isModal: Bool {
         
         if let index = navigationController?.viewControllers.index(of: self), index > 0 {

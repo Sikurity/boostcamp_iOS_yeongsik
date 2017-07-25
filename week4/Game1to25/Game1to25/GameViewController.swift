@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     private var timeGameStarted: Date?
     private var gameTimer: Timer?
     
+    private var lastFinishedTime: String = ""
     private var playtime: String {
         
         guard let started = timeGameStarted else {
@@ -61,14 +62,18 @@ class GameViewController: UIViewController {
     
     @IBOutlet var buttonsGroupView: UIStackView!
     @IBOutlet var gameStartButton: UIButton!
+    @IBOutlet var historyButton: UIButton!
     @IBOutlet var recordTimeLabel: UILabel!
     @IBOutlet var bestRecordLabel: UILabel!
+    
     
     // MARK: - Life Cycle Method
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        historyButton.setTitleColor(UIColor.white, for: .normal)
+        historyButton.setTitleColor(UIColor.gray, for: .disabled)
         // Do any additional setup after loading the view.
     }
 
@@ -83,6 +88,7 @@ class GameViewController: UIViewController {
         gameTimer = nil
         timeGameStarted = nil
         
+        historyButton.isEnabled = true
         buttonsGroupView.isHidden = true
         gameStartButton.isHidden = false
         
@@ -124,6 +130,7 @@ class GameViewController: UIViewController {
     private func startTimer() {
         
         timeGameStarted = Date()
+        historyButton.isEnabled = false
         gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
     
@@ -139,11 +146,15 @@ class GameViewController: UIViewController {
                 textField.placeholder = "Name"
             })
             
+            self.lastFinishedTime = self.playtime
             let confirmAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
                 
                 if let name = alertController.textFields?[0].text {
                     
-                    self.appDelegate.history.append(Record(name: name, playtime: self.playtime, date: Date()))
+                    self.appDelegate.history.append(Record(name: name, playtime: self.lastFinishedTime, date: Date()))
+                    
+                    print(self.appDelegate.history)
+                    
                     self.appDelegate.history.sort(by: {$0.0.playtime < $0.1.playtime })
                     
                     self.bestRecordLabel.text = self.bestRecord
@@ -165,24 +176,15 @@ class GameViewController: UIViewController {
     }
     
     private func endTimer() {
+        
         gameTimer?.invalidate()
         
         gameTimer = nil
         timeGameStarted = nil
         
+        historyButton.isEnabled = true
         buttonsGroupView.isHidden = true
         gameStartButton.isHidden = false
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

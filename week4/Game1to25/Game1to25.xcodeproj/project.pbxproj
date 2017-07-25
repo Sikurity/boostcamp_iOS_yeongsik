@@ -11,7 +11,6 @@
 		044B01E01F26E041001F382E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B01DF1F26E041001F382E /* HistoryViewController.swift */; };
 		044B01E21F26E4EF001F382E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B01E11F26E4EF001F382E /* Record.swift */; };
 		0471CD4D1F265B10008449B5 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471CD4C1F265B10008449B5 /* GameButton.swift */; };
-		0478B2221F272B7000FC8268 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478B2211F272B7000FC8268 /* RecordTableViewCell.swift */; };
 		04D746C71F264DB8006904DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D746C61F264DB8006904DD /* AppDelegate.swift */; };
 		04D746C91F264DB8006904DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D746C81F264DB8006904DD /* MainViewController.swift */; };
 		04D746CC1F264DB8006904DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D746CA1F264DB8006904DD /* Main.storyboard */; };
@@ -24,7 +23,6 @@
 		044B01DF1F26E041001F382E /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		044B01E11F26E4EF001F382E /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		0471CD4C1F265B10008449B5 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
-		0478B2211F272B7000FC8268 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		04D746C31F264DB8006904DD /* Game1to25.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game1to25.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D746C61F264DB8006904DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D746C81F264DB8006904DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -67,14 +65,13 @@
 				04D746C61F264DB8006904DD /* AppDelegate.swift */,
 				04D746C81F264DB8006904DD /* MainViewController.swift */,
 				044B01DD1F26E025001F382E /* GameViewController.swift */,
-				0478B2211F272B7000FC8268 /* RecordTableViewCell.swift */,
 				044B01DF1F26E041001F382E /* HistoryViewController.swift */,
-				04D746CA1F264DB8006904DD /* Main.storyboard */,
-				04D746CD1F264DB8006904DD /* Assets.xcassets */,
-				04D746CF1F264DB8006904DD /* LaunchScreen.storyboard */,
-				04D746D21F264DB8006904DD /* Info.plist */,
 				0471CD4C1F265B10008449B5 /* GameButton.swift */,
 				044B01E11F26E4EF001F382E /* Record.swift */,
+				04D746CA1F264DB8006904DD /* Main.storyboard */,
+				04D746CF1F264DB8006904DD /* LaunchScreen.storyboard */,
+				04D746CD1F264DB8006904DD /* Assets.xcassets */,
+				04D746D21F264DB8006904DD /* Info.plist */,
 			);
 			path = Game1to25;
 			sourceTree = "<group>";
@@ -154,7 +151,6 @@
 			files = (
 				044B01DE1F26E025001F382E /* GameViewController.swift in Sources */,
 				04D746C91F264DB8006904DD /* MainViewController.swift in Sources */,
-				0478B2221F272B7000FC8268 /* RecordTableViewCell.swift in Sources */,
 				044B01E21F26E4EF001F382E /* Record.swift in Sources */,
 				0471CD4D1F265B10008449B5 /* GameButton.swift in Sources */,
 				04D746C71F264DB8006904DD /* AppDelegate.swift in Sources */,
