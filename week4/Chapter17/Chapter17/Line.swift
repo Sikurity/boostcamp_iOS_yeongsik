@@ -71,8 +71,13 @@ class Line : Strokable{
     func move(locations: [CGPoint]) {
         
         for (idx, location) in locations.enumerated() {
-            segments[idx].end = location
-            segments[idx].color = Line.caculateColor(with: segments[idx])
+            
+            if idx < segments.count {
+                segments[idx].end = location
+                segments[idx].color = Line.caculateColor(with: segments[idx])
+            } else {
+                break
+            }
         }
     }
     
@@ -80,8 +85,13 @@ class Line : Strokable{
     func finish(locations: [CGPoint]) -> Strokable {
         
         for (idx, location) in locations.enumerated() {
-            segments[idx].end = location
-            segments[idx].color = Line.caculateColor(with: segments[idx])
+            
+            if idx < segments.count {
+                segments[idx].end = location
+                segments[idx].color = Line.caculateColor(with: segments[idx])
+            } else {
+                break
+            }
         }
         
         return self
