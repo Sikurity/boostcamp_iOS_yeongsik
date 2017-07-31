@@ -1,4 +1,4 @@
-
+//
 //  Circle.swift
 //  Chapter17
 //
@@ -67,34 +67,31 @@ class Circle : Strokable {
     /// touchesMoved에서 손가락을 움직여 그림의 모양을 변경
     func move(locations: [CGPoint]) {
         
-        if locations.count > 1 {
-            var center: CGPoint = CGPoint()
-            center.x = (locations[0].x + locations[1].x) / 2
-            center.y = (locations[0].y + locations[1].y) / 2
-            
-            let dx: CGFloat = locations[1].x - locations[0].x
-            let dy: CGFloat = locations[1].y - locations[0].y
-            
-            let radius = sqrt(dx * dx + dy * dy) / 2
-            segment = CircleSegment(center: center, radius: radius, color: Circle.caculateColor(with: CGPoint(x: dx, y:dy)))
-        }
+        var center: CGPoint = CGPoint()
+        center.x = (locations[0].x + locations[1].x) / 2
+        center.y = (locations[0].y + locations[1].y) / 2
+        
+        let dx: CGFloat = locations[1].x - locations[0].x
+        let dy: CGFloat = locations[1].y - locations[0].y
+        
+        let radius = sqrt(dx * dx + dy * dy) / 2
+        segment = CircleSegment(center: center, radius: radius, color: Circle.caculateColor(with: CGPoint(x: dx, y:dy)))
+
     }
     
     /// touchesEnded에서 화면에서 손가락을 떼서 그림의 모양을 확정
     func finish(locations: [CGPoint]) -> Strokable {
         
-        if locations.count > 1 {
-            var center: CGPoint = CGPoint()
-            center.x = (locations[0].x + locations[1].x) / 2
-            center.y = (locations[0].y + locations[1].y) / 2
-            
-            let dx: CGFloat = locations[1].x - locations[0].x
-            let dy: CGFloat = locations[1].y - locations[0].y
-            
-            let radius = sqrt(dx * dx + dy * dy) / 2
-            segment = CircleSegment(center: center, radius: radius, color: Circle.caculateColor(with: CGPoint(x: dx, y: dy)))
-        }
+        var center: CGPoint = CGPoint()
+        center.x = (locations[0].x + locations[1].x) / 2
+        center.y = (locations[0].y + locations[1].y) / 2
         
+        let dx: CGFloat = locations[1].x - locations[0].x
+        let dy: CGFloat = locations[1].y - locations[0].y
+        
+        let radius = sqrt(dx * dx + dy * dy) / 2
+        segment = CircleSegment(center: center, radius: radius, color: Circle.caculateColor(with: CGPoint(x: dx, y: dy)))
+
         return self
     }
 }
