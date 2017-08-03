@@ -25,12 +25,16 @@ class PhotosViewController: UIViewController {
             let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(pageDown))
             swipeDown.direction = .down
             collectionView.addGestureRecognizer(swipeDown)
+            
+            collectionView.allowsSelection = true
+            collectionView.allowsMultipleSelection = true
         }
     }
     
     var store: PhotoStore!
     let photoDataSource = PhotoDataSource()
     
+    @IBOutlet var selectMultipleImages: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +55,10 @@ class PhotosViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func selectMultiImages(_ sender: Any) {
+        collectionView.allowsSelection = !collectionView.allowsSelection
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,6 +68,10 @@ class PhotosViewController: UIViewController {
     /// 금메달 과제 - 커스텀 레이아웃 만들기 : 너무 어려워서 정답을 보고, 이해하는 식으로 수행하였습니다.
     override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return !collectionView.allowsSelection
     }
     
     // MARK: - Paging Helpers
@@ -193,5 +205,10 @@ extension PhotosViewController: UICollectionViewDelegate {
         }()
         
         return adjustedHeight
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print(indexPath.row)
     }
 }

@@ -74,7 +74,18 @@
                             <constraint firstItem="bbC-EY-PH8" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="rmn-bI-dvK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iIK-s1-bJR"/>
+                    <navigationItem key="navigationItem" id="iIK-s1-bJR">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="au0-uM-ejY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eSf-MA-m6Z">
+                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select"/>
+                                <connections>
+                                    <action selector="selectMultiImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdo-ve-DBC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="bbC-EY-PH8" id="LYn-48-nsE"/>
                     </connections>
