@@ -150,20 +150,24 @@ class CRUDImageViewController: UIViewController {
             let imageDesc = imageDescTextView.text ?? ""
             
             let params = ["image_title": imageTitle, "image_desc": imageDesc]
-            let body = FileUploader.createBody(with: params, filePathKey: "file", filename: imageTitle + ".jpg", loaded: data)
+            let body = FileUploader.createBody(with: params, filePathKey: "image_data", filename: imageTitle + ".jpg", loaded: data)
             appDelegate.articleStore.createArticle(with: body) { requestResult in
                 
                 if case let .success(result) = requestResult {
-                    guard let article = result as? Article else {
+                    guard let articles = result as? [Article] else {
                         print("Request result cannot convert to article")
                         // 테이블 뷰 업데이트
                         // 콜렉션 뷰 업데이트
                         return
                     }
                     
-                    self.appDelegate.articleStore.append(article)
+                    self.appDelegate.articleStore.overwrite(with: articles)
                 } else if case let .failure(error) = requestResult {
                     print("Create Article Failed... \(error)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.currentMode = .read(self.appDelegate.userManager.isOwnedByLoggedInUser(self.article))
                 }
             }
         case .update:
@@ -178,20 +182,24 @@ class CRUDImageViewController: UIViewController {
             let imageDesc = imageDescTextView.text ?? ""
             
             let params = ["image_title": imageTitle, "image_desc": imageDesc]
-            let body = FileUploader.createBody(with: params, filePathKey: "file", filename: imageTitle + ".jpg", loaded: data)
+            let body = FileUploader.createBody(with: params, filePathKey: "image_data", filename: imageTitle + ".jpg", loaded: data)
             appDelegate.articleStore.updateArticle(for: article._id, with: body) { requestResult in
                 
                 if case let .success(result) = requestResult {
-                    guard let article = result as? Article else {
+                    guard let articles = result as? [Article] else {
                         print("Request result cannot convert to article")
                         // 테이블 뷰 업데이트
                         // 콜렉션 뷰 업데이트
                         return
                     }
                     
-                    self.appDelegate.articleStore.update(article)
+                    self.appDelegate.articleStore.overwrite(with: articles)
                 } else if case let .failure(error) = requestResult {
                     print("Create Article Failed... \(error)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.currentMode = .read(self.appDelegate.userManager.isOwnedByLoggedInUser(self.article))
                 }
             }
             
@@ -202,7 +210,19 @@ class CRUDImageViewController: UIViewController {
     
     @IBAction func deleteArticle(_ sender: Any) {
         
-        appDelegate.articleStore.deleteArticle(for: article._id) { requestResult in
+        guard
+            let image = articleImageView.image,
+            let data = UIImageJPEGRepresentation(image, 0.75)
+            else {
+                return
+        }
+        
+        let imageTitle = imageTitleTextField.text ?? "Untitled"
+        let imageDesc = imageDescTextView.text ?? ""
+        
+        let params = ["image_title": imageTitle, "image_desc": imageDesc]
+        let body = FileUploader.createBody(with: params, filePathKey: "image_data", filename: imageTitle + ".jpg", loaded: data)
+        appDelegate.articleStore.deleteArticle(for: article._id, with: body) { requestResult in
             
             if case let .success(result) = requestResult {
                 guard let article = result as? Article else {
@@ -216,12 +236,16 @@ class CRUDImageViewController: UIViewController {
             } else if case let .failure(error) = requestResult {
                 print("Create Article Failed... \(error)")
             }
+            
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
     @IBAction func didImageTapped(_ sender: Any) {
         
-        guard let mode = currentMode, case .create = mode else {
+        if let mode = currentMode, case .read = mode {
             return
         }
         

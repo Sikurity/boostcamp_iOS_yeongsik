@@ -21,7 +21,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     var article: Article? {
         willSet(newValue) {
-            print(newValue)
             guard let articleForCell = newValue else {
                 
                 articleImageView.image = nil
