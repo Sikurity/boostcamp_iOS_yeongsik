@@ -85,14 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				04563EDD1F2FB8F9008AE1CF /* AppDelegate.swift */,
-				04B16C971F30B56D0036D99E /* Article.swift */,
-				0447D9FD1F310B2800003E20 /* User.swift */,
-				0447D9FF1F3115A400003E20 /* UserManager.swift */,
-				04B16C981F30B56D0036D99E /* ArticleCollectionViewCell.swift */,
-				0447D9FB1F30FE5F00003E20 /* ArticleTableViewCell.swift */,
-				04B16C961F30B56D0036D99E /* ArticleStore.swift */,
-				04B16C991F30B56D0036D99E /* BoostcampAPI.swift */,
-				047F17051F314722004E9633 /* FileUploader.swift */,
 				048C3BAA1F30A3B6003CCD98 /* View */,
 				045D46521F3098F7001C3659 /* Model */,
 				045D46501F3098C9001C3659 /* Controller */,
@@ -122,6 +114,12 @@
 		045D46521F3098F7001C3659 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04B16C971F30B56D0036D99E /* Article.swift */,
+				0447D9FD1F310B2800003E20 /* User.swift */,
+				0447D9FF1F3115A400003E20 /* UserManager.swift */,
+				04B16C961F30B56D0036D99E /* ArticleStore.swift */,
+				04B16C991F30B56D0036D99E /* BoostcampAPI.swift */,
+				047F17051F314722004E9633 /* FileUploader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +127,8 @@
 		048C3BAA1F30A3B6003CCD98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B16C981F30B56D0036D99E /* ArticleCollectionViewCell.swift */,
+				0447D9FB1F30FE5F00003E20 /* ArticleTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

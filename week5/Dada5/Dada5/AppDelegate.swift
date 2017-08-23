@@ -1,22 +1,19 @@
 //
 //  AppDelegate.swift
-//  ImageBoard
+//  Dada5
 //
-//  Created by YeongsikLee on 2017. 8. 1..
+//  Created by YeongsikLee on 2017. 8. 3..
 //  Copyright © 2017년 boostcamp. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    let articleStore = ArticleStore()
-    let userManager = UserManager()
-    
-    
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -48,46 +45,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension UIViewController {
-    
-    var appDelegate: AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
-    }
-    
-    var isModal: Bool {
-        
-        if let index = navigationController?.viewControllers.index(of: self), index > 0 {
-            return false
-        } else if presentingViewController != nil {
-            return true
-        } else if navigationController?.presentingViewController?.presentedViewController == navigationController  {
-            return true
-        } else if tabBarController?.presentingViewController is UITabBarController {
-            return true
-        }
-        
-        return false
-    }
-    
-    func alertComfirmMessage(title: String, message: String, completion: (() -> Swift.Void)? = nil) {
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default) {
-            UIAlertAction in
-            print("확인")
-        }
-        alertController.addAction(okAction)
-        
-        DispatchQueue.main.async {
-            self.present(alertController, animated: true, completion: completion)
-        }
-    }
-    
-    func validateEmail(email: String) -> Bool {
-        
-        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
-        
-        return emailPredicate.evaluate(with: email)
-    }
-}

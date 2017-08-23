@@ -107,6 +107,6 @@ class UserManager {
     
     func isOwnedByLoggedInUser(_ article: Article) -> Bool {
         
-        return loggedInUser?.nickname == article.author_nickname
+        return loggedInUser?._id == article.author
     }
 }

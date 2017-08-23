@@ -106,9 +106,12 @@ struct BoostcampAPI: RestfulAPI {
         }
         
         switch api.method {
+            
         case .get, .delete:
+            
             let parameters = data as? [String:String]
             components.queryItems = parameters?.map { return URLQueryItem(name: $0, value: $1) }
+            
         default:
             break
         }
